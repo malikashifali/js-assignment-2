@@ -1,10 +1,10 @@
 // clear input box 
-document.getElementById("clearInputBtn").onclick = function(){
+document.getElementById("clearInputBtn").onclick = function () {
     document.getElementById("input-box").innerHTML = " "
 }
 
 // clear output box 
-document.getElementById("clearOutputBtn").onclick = function(){
+document.getElementById("clearOutputBtn").onclick = function () {
     document.getElementById("output-box").innerHTML = " "
 }
 
@@ -20,20 +20,26 @@ document.getElementById("concatenation").onclick = function () {
 }
 
 // ask name from user 
-document.getElementById("askName").onclick = function(){
+document.getElementById("askName").onclick = function () {
     let firstName = prompt("please enter your first name")
-    let lastName = prompt("please enter your last name")
-    let fullName = `${firstName} ${lastName}`
-    document.getElementById("input-box").innerHTML = `first name = ${firstName} <br> last name = ${lastName} <br> full name = first name + last name`
-    document.getElementById("output-box").innerHTML = `full name = ${fullName}`
+    console.log(firstName)
+    
+    if (firstName == null || firstName.length < 3) {
+        alert("please enter you name correctly")
+    } else {
+        let lastName = prompt("please enter your last name")
+        let fullName = `${firstName} ${lastName}`
+        document.getElementById("input-box").innerHTML = `first name = ${firstName} <br> last name = ${lastName} <br> full name = first name + last name`
+        document.getElementById("output-box").innerHTML = `full name = ${fullName}`
+    }
 }
 
 // comparison operator 
-document.getElementById("comparisonOperator").onclick = function (){
+document.getElementById("comparisonOperator").onclick = function () {
 
     let num1 = +prompt("please enter first number")
     let num2 = +prompt("please enter second number")
-    if (num1 === num2){
+    if (num1 === num2) {
         document.getElementById("input-box").innerHTML = "num1 == num2"
         document.getElementById("output-box").innerHTML = "<span class='text-success'>Condition is true &#128522;<span/>"
     }
@@ -44,16 +50,16 @@ document.getElementById("comparisonOperator").onclick = function (){
 }
 
 // if else if
-document.getElementById("ifElseIf").onclick = function (){
+document.getElementById("ifElseIf").onclick = function () {
     document.getElementById("input-box").innerHTML = " ";
     let marks = +prompt("please enter your marks")
-    if (marks >= 90){
+    if (marks >= 90) {
         document.getElementById("output-box").innerHTML = "<span class='text-success'>Congratulations! you got A+ Grade</span> "
     }
-    else if (marks >=80){
+    else if (marks >= 80) {
         document.getElementById("output-box").innerHTML = "<span class='text-success'>Congratulations! you got A Grade</span>"
     }
-    else if (marks >=70){
+    else if (marks >= 70) {
         document.getElementById("output-box").innerHTML = "<span class='text-warning'>you got B Grade</span>"
     }
     else {
@@ -63,7 +69,7 @@ document.getElementById("ifElseIf").onclick = function (){
 
 
 // sets of conditions 
-document.getElementById("setsOfConditions").onclick = function (){
+document.getElementById("setsOfConditions").onclick = function () {
     document.getElementById("input-box").innerHTML = " ";
     let age = prompt("please enter your age")
     let weight = prompt("please enter your weight")
@@ -86,29 +92,29 @@ document.getElementById("setsOfConditions").onclick = function (){
 }
 
 // if statement nested 
-document.getElementById("ifStatementNested").onclick = function(){
+document.getElementById("ifStatementNested").onclick = function () {
     let userName = prompt("please enter user name")
-    if(userName === "kashif"){
+    if (userName === "kashif") {
         let password = prompt("please enter password")
-        if(password == 786){
+        if (password == 786) {
             document.getElementById("output-box").innerHTML = "<span style='color:green; text-transform:capitalize;'>you are successfully logged in</span>"
         }
-        else{
+        else {
             document.getElementById("output-box").innerHTML = `<span class='text-danger'>${password}</span> is incorrect password. <br> correct password is <span class='text-success'>786</span>`
         }
     }
-    else{
+    else {
         document.getElementById("output-box").innerHTML = `<span class='text-danger'>${userName} </span> is incorrect user name. <br> correct user name is <span class='text-success'> "kashif"</span>`
     }
 }
 
 
 // login 
-document.getElementById("login").onclick = function (){
+document.getElementById("login").onclick = function () {
     document.getElementById("input-box").innerHTML = " ";
     let userName = prompt("please enter username")
     let passWord = +prompt("please enter password")
-    if (userName === "kashif" && passWord === 786 ){
+    if (userName === "kashif" && passWord === 786) {
         document.getElementById("form").innerHTML = `<span style='color:green; font-weight:bold;'>${userName}</span>`
         document.getElementById("output-box").innerHTML = `<span style='color:green; text-transform:capitalize;'>you are successfully logged in</span>`
     }
