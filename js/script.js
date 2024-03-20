@@ -22,7 +22,6 @@ document.getElementById("concatenation").onclick = function () {
 // ask name from user 
 document.getElementById("askName").onclick = function () {
     let firstName = prompt("please enter your first name")
-    console.log(firstName)
     
     if (firstName == null || firstName.length < 3) {
         alert("please enter you name correctly")
